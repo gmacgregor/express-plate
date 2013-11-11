@@ -1,0 +1,10 @@
+{
+  "environment": "production",
+  "host": "",
+  "port": 8888,
+  "logs": {
+    "dir": "",
+    "info": "debug.log",
+    "error": "error.log"
+  }
+}
