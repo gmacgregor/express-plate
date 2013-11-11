@@ -1,0 +1,21 @@
+## Bower components
+app/public/scripts/vendor
+
+## Module dependencies
+node_modules
+
+## Log files
+*.log
+
+## cache/grunt/task files
+.tmp
+.sass-cache
+
+## OS generated files
+._*
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
