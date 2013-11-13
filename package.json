@@ -1,5 +1,5 @@
 {
-  "name": "Application name",
+  "name": "My-Application",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -7,10 +7,10 @@
     "express-winston": "~0.2.1",
     "swig": "~1.1.0",
     "winston-filerotatedate": "~0.1.7",
-    "winston": "~0.7.2"
+    "winston": "~0.7.2",
+    "convict": "~0.4.1"
   },
   "scripts": {
-    "start": "node ./app/bin/start.js",
     "test": "node_modules/.bin/mocha $(find test -name '*.js')",
     "postinstall": "node_modules/.bin/bower install"
   },

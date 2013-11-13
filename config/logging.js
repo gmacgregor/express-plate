@@ -1,4 +1,3 @@
-/* jshint node: true */
 'use strict';
 
 var util = require('util'),
@@ -11,11 +10,7 @@ var logTransports = [],
   logExitOnError = true,
    _1MB = 1048576;
 
-var logdir = config.logs.dir;
-if (!logdir || logdir === '') {
-  var logdir = process.cwd() + '/log';
-}
-
+var logdir = config.get('logdir');
 var logConfig = {
   levels: {
     silly: 0,
@@ -63,7 +58,7 @@ function logTimestampFormat() {
 }
 
 // In development, log everything to the console
-if (config.environment === 'development') {
+if ( config.get('env') === 'development' ) {
   var devlogger = new winston.transports.Console({
     timestamp: logTimestampFormat,
     colorize: true,
@@ -75,7 +70,7 @@ if (config.environment === 'development') {
   logTransports = [
     new winston.transports.Console({ level: 'info', timestamp: logTimestampFormat, colorize: true }),
     new winston.transports.FileRotateDate({
-      filename: config.logging.info,
+      filename: config.get('logfiles').info,
       timestamp: logTimestampFormat,
       dirname: logdir,
       maxsize: _1MB,
@@ -85,7 +80,7 @@ if (config.environment === 'development') {
   logExceptionHandlers = [
     new winston.transports.Console({ level: 'error', timestamp: logTimestampFormat }),
     new winston.transports.FileRotateDate({
-      filename: config.logging.error,
+      filename: config.get('logfiles').error,
       timestamp: logTimestampFormat,
       dirname: logdir,
       maxsize: _1MB,
