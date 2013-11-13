@@ -2,6 +2,5 @@
   "env": "development",
   "hostname": "localhost",
   "ipaddress": "127.0.0.1",
-  "port": 3000,
-  "logdir": "../logs"
+  "port": 3000
 }

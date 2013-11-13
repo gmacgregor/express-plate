@@ -26,7 +26,7 @@ var conf = convict({
   logdir: {
     doc: 'The path application logging directories',
     format: String,
-    default: ''
+    default: process.cwd() + '/logs'
   },
   logfiles: {
     doc: 'The application log file names',
